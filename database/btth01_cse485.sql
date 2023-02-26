@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 25, 2023 lúc 03:41 AM
+-- Thời gian đã tạo: Th2 26, 2023 lúc 04:59 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -67,14 +67,14 @@ INSERT INTO `baiviet` (`ma_bviet`, `tieude`, `ten_bhat`, `ma_tloai`, `tomtat`, `
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `passwork` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `login`
 --
 
-INSERT INTO `login` (`id`, `username`, `passwork`) VALUES
+INSERT INTO `login` (`id`, `username`, `password`) VALUES
 (1, 'nguyenmai', '1411'),
 (2, 'dolan', '2479'),
 (3, 'dongphuong', '2809');

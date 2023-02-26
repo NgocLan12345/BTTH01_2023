@@ -1,14 +1,28 @@
 <?php
-//buoc1: kết nối DB server
-    // $host = "localhost";
-    // $user = "root";
-    // $pass = "";
-    // $db = "btth01_cse485";
-    // $por = "3306";
-    try{
-        $conn = new PDO('mysql:host=localhost;dbname = btth01_cse485; port=3306', 'root','');
-        echo "Connection successfully";
 
-    } catch(PDOException $e){
-           echo "Connection failed".$e->getMessage(); }
+const servername = "localhost";
+const username = "root";
+const password = "";
+const dbname = "btth01_cse485";
+
+//thực thi: insert, delete, update
+function execute($sql){
+    $conn = mysqli_connect(servername, username, password, dbname);
+    mysqli_query($conn, $sql);
+    mysqli_close($conn);
+}
+
+//thực thi: select
+function executeResult($sql){
+    $conn = mysqli_connect(servername, username, password, dbname);
+    $result = mysqli_query($conn, $sql);
+    $list = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $list[] = $row;
+    }
+    mysqli_close($conn);
+    return $list;
+}
+
 ?>
+
