@@ -46,34 +46,24 @@
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
             <div class="col-sm">
-                <a href="add_author.php" class="btn btn-success">Thêm mới</a>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Mã Tác Giả</th>
-                            <th scope="col">Tên Tác Giả</th>
-                            <th scope="col">Hình Tác Giả</th>
-                            <th>Sửa</th>
-                            <th>Xóa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Nhạc Việt Plus</td>
-                            <td>
+                <h3 class="text-center text-uppercase fw-bold">Thêm mới tác giả</h3>
+                <form action="process_add_category.php" method="post">
+                    <div class="input-group mt-3 mb-3">
+                        <span class="input-group-text" id="lbCatName">Tên Tác Giả</span>
+                        <input type="text" class="form-control" name="txtCatName" >
+                    </div>
 
-                            </td>
-                            <td>
-                                <a href="edit_category.php?id=1"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                            <td>
-                                <a href=""><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+                    <div class="input-group mt-3 mb-3">
+                    <span class="input-group-text" id="lbCatName">Thêm hình ảnh</span>
+                        <input type="file" class="form-control " name="hinhanh" accept="image/*" id="image"><br> 
+                
+                    </div>
+
+                    <div class="form-group  float-end ">
+                        <input type="submit" value="Thêm" class="btn btn-success">
+                        <a href="author.php" class="btn btn-warning ">Quay lại</a>
+                    </div>
+                </form>
             </div>
         </div>
     </main>

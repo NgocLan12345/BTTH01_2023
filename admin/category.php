@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,27 +58,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Nhạc trữ tình</td>
-                            <td>
-                                <a href="edit_category.php?id=1"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                            <td>
-                                <a href=""><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Nhạc cách mạng</td>
-                            <td>
-                                <a href="edit_category.php?id=2"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                            <td>
-                                <a href=""><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
-                       
+                    <?php   
+                            require('../includes/connect.php');
+                            $sql = 'select * from theloai';
+                            $statement = $conn->query($sql);
+                            foreach ($statement as $each){
+                            ?>                             
+                                <tr>
+                                    <th scope="row"><?= $each['ma_tloai']?></th>
+                                    <td><?= $each['ten_tloai'] ?></td>
+                                    <td>
+                                        <a href="edit_category.php?id=<?=$each['ma_tloai']?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href="delete_category.php?id=<?=$each['ma_tloai']?>"><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                        
+                                <?php
+                    }
+
+                    ?>  
                     </tbody>
                 </table>
             </div>
