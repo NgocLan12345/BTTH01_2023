@@ -58,19 +58,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Nhạc Việt Plus</td>
-                            <td>
-
-                            </td>
-                            <td>
-                                <a href="edit_category.php?id=1"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                            <td>
-                                <a href=""><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr>
+                    <?php
+                        require('../includes/connect.php');
+                        $sql = 'select * from tacgia';
+                        $statement = $conn->query($sql);
+                        foreach ($statement as $author) {
+                        ?>
+                            <tr>
+                                <th scope="row"><?= $author['ma_tgia'] ?></th>
+                                <td><?= $author['ten_tgia'] ?></td>
+                                <td><img src="../images/songs/<?= $author["hinh_tgia"] ?>" alt=""
+                                    style="width: 100px;"></td>
+                            
+                                <td>
+                                    <a href="edit_author.php?id=<?php echo $author['ma_tgia']?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                </td>
+                                <td>
+                                    <a href="delete_author.php?id=<?php echo $author['ma_tgia']?>"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
                         
                     </tbody>
                 </table>
