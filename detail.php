@@ -1,9 +1,9 @@
 <?php
 $link_css_login = "";
-require_once('includes/header.php');
-require_once('includes/connect.php');
+include('includes/header.php');
+include('includes/connect.php');
 
-$articles = executeResult('select baiviet.tieude, baiviet.ten_bhat, baiviet.tomtat, baiviet.noidung, baiviet.hinhanh, theloai.ten_tloai, tacgia.ten_tgia from baiviet, theloai, tacgia where baiviet.ma_bviet ='.$_GET['id_article'].' and baiviet.ma_tloai = theloai.ma_tloai and baiviet.ma_tgia=tacgia.ma_tgia;');
+$articles = ('select baiviet.tieude, baiviet.ten_bhat, baiviet.tomtat, baiviet.noidung, baiviet.hinhanh, theloai.ten_tloai, tacgia.ten_tgia from baiviet, theloai, tacgia where baiviet.ma_bviet ='.$_GET['id_article'].' and baiviet.ma_tloai = theloai.ma_tloai and baiviet.ma_tgia=tacgia.ma_tgia;');
 
 $path_img = ($articles[0]['hinhanh'] == "")? "default.jpg":$articles[0]['hinhanh'];
 ?>
@@ -74,5 +74,5 @@ $path_img = ($articles[0]['hinhanh'] == "")? "default.jpg":$articles[0]['hinhanh
 </body>
 </html>
 <?php
-require_once('includes/footer.php');    
+include('includes/footer.php');    
 ?>

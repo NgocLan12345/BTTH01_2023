@@ -1,5 +1,5 @@
 <?php
-require_once('includes/footer.php');
+include('includes/footer.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

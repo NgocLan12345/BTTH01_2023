@@ -1,6 +1,6 @@
 <?php
 $link_css_login = "css/style_login.css";
-require_once('includes/header.php');
+include('includes/header.php');
 ?>
 
 <main class="container mt-5 mb-5">
@@ -54,5 +54,5 @@ require_once('includes/header.php');
 </main>
 
 <?php
-require_once('includes/footer.php');
+include('includes/footer.php');
 ?>
