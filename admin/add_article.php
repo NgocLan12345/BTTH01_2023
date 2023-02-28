@@ -47,45 +47,53 @@
     <div class="row">
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới bài viết</h3>
-                <form action="process_add_article.php" method="post">
-                    <div class="input-group mt-3 mb-3">
+                <form action="process_add_article.php" method="post" enctype = "multipart/form-data">
+                     <?php
+                        require('../includes/connect.php');
+                        $sql = "select * from theloai";
+                        $statement = $conn->query($sql);
+                        $sql_tg = "select ma_tgia,ten_tgia from tacgia";
+                        $sttm = $conn->query($sql_tg);
+                    ?> 
+                
+                <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tiêu đề</span>
-                        <input type="text" class="form-control" name="txtartName" >
+                        <input type="text" class="form-control" name="txtTitle" >
                     </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tên bài hát</span>
-                        <input type="text" class="form-control" name="txtartName" >
+                        <input type="text" class="form-control" name="txtName" >
                     </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tên thể loại</span>
-                        <input type="text" class="form-control" name="txtartName" >
+                        <input type="text" class="form-control" name="category_id" >
                     </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tên tác giả</span>
-                        <input type="text" class="form-control" name="txtartName" >
+                        <input type="text" class="form-control" name="author_id" >
                     </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tóm tắt</span>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="tomtat"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="summary"></textarea>
                     </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Nội dung</span>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="tomtat"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="content"></textarea>
                     </div>
 
                     <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lblartdare" >Ngày viết</span>
-                        <input type="date" id="date" name="date">
+                        <span class="input-group-text" id="lblartdate" >Ngày viết</span>
+                        <input type="date" id="ngayviet" name="date">
                     </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Thêm hình ảnh</span>
-                        <input type="file" class="form-control " name="hinhanh" accept="image/*" id="image"><br> 
+                        <input type="file" class="form-control " name="image" accept="image/*" id="image"><br> 
                         <input type="submit" class="form-control " value="upload">
                     </div>
 
