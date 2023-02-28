@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,20 +49,24 @@
         <div class="row">
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Thêm mới tác giả</h3>
-                <form action="process_add_category.php" method="post">
+                <form action="process_add_author.php" method="post">
+                <!-- <div class="input-group mt-3 mb-3">
+                        <span class="input-group-text" id="Idtg">Mã tác giả</span>
+                        <input type="text" class="form-control" name="txtId" value="" >
+                    </div> -->
                     <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lbCatName">Tên Tác Giả</span>
-                        <input type="text" class="form-control" name="txtCatName" >
+                        <span class="input-group-text" id="tentg">Tên Tác Giả</span>
+                        <input type="text" class="form-control" name="txttentg" >
                     </div>
 
                     <div class="input-group mt-3 mb-3">
-                    <span class="input-group-text" id="lbCatName">Thêm hình ảnh</span>
+                    <span class="input-group-text" id="img">Thêm hình ảnh</span>
                         <input type="file" class="form-control " name="hinhanh" accept="image/*" id="image"><br> 
                 
                     </div>
 
                     <div class="form-group  float-end ">
-                        <input type="submit" value="Thêm" class="btn btn-success">
+                        <input type="submit" value="Thêm" class="btn btn-success" name='btnSave' >
                         <a href="author.php" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>

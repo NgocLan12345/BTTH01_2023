@@ -50,7 +50,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Mã Tác Giả</th>
+                            <th scope="col">#</th>
                             <th scope="col">Tên Tác Giả</th>
                             <th scope="col">Hình Tác Giả</th>
                             <th>Sửa</th>
@@ -65,6 +65,7 @@
                         foreach ($statement as $author) {
                         ?>
                             <tr>
+                         
                                 <th scope="row"><?= $author['ma_tgia'] ?></th>
                                 <td><?= $author['ten_tgia'] ?></td>
                                 <td><img src="../images/songs/<?= $author["hinh_tgia"] ?>" alt=""
