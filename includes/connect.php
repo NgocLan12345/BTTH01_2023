@@ -1,15 +1,8 @@
 <?php
-
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "btth01_cse485";
-
-try {                      
-    $conn = new PDO('msql:host = localhost; dbname=btth01_cse485', $username, $password);                                                    
+try {                                                               
+    $conn = new PDO('mysql:host=localhost;dbname=btth01_cse485;port=3306','root','');          
 } catch (PDOException $e) {                                         
-    throw new PDOException($e->getMessage(), $e->getCode());       
+    echo $e->getMessage();    
 }
 
 ?>
-
