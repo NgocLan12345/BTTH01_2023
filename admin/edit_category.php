@@ -48,14 +48,20 @@
             <div class="col-sm">
                 <h3 class="text-center text-uppercase fw-bold">Sửa thông tin thể loại</h3>
                 <form action="process_add_category.php" method="post">
+                <?php
+                            $id = $_GET['id'];
+                            require('../includes/connect.php');
+                            $sql = "select * from theloai where ma_tloai = '$id'";
+                            $statement = $conn->query($sql);
+                            $category = $statement ->fetch();
+                            ?>
                 <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatId">Mã thể loại</span>
-                        <input type="text" class="form-control" name="txtCatId" readonly value="1">
+                        <input type="text" class="form-control" name="txtCatId" readonly value="<?= $category['ma_tloai'] ?>" >
                     </div>
-
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblCatName">Tên thể loại</span>
-                        <input type="text" class="form-control" name="txtCatName" value = "Nhạc trữ tình">
+                        <input type="text" class="form-control" name="txtCatName" value="<?= $category['ten_tloai'] ?>" >
                     </div>
 
                     <div class="form-group  float-end ">

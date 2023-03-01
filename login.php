@@ -52,15 +52,22 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="process.php" method="post">
+                            <?php
+                                if(isset($_GET['error'])){
+                                ?>
+                                <span style="color: red;">
+                                    <?php echo $_GET['error'] ?>    
+                                </span>
+                            <?php } ?>  
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="txtUser"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="username" >
+                                <span class="input-group-text" ><i class="fas fa-user"></i></span>
+                                <input type="text" class="form-control" placeholder="username"name="txtUser" >
                             </div>
 
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="txtPass"><i class="fas fa-key"></i></span>
-                                <input type="text" class="form-control" placeholder="password" >
+                                <span class="input-group-text" ><i class="fas fa-key"></i></span>
+                                <input type="text" class="form-control" placeholder="password" name="txtPass">
                             </div>
                             
                             <div class="row align-items-center remember">
