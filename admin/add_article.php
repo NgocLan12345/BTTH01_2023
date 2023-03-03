@@ -68,13 +68,25 @@
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tên thể loại</span>
-                        <input type="text" class="form-control" name="category_id" >
-                    </div>
+                        <select name="category_id" id="">
+                            <?php foreach($statement as $article){ ?>
+                                <option value="<?= $article['ma_tloai']?>">
+                                    <?= $article['ten_tloai']?>
+                                </option>
+                           <?php } ?>
+                            
+                        </select> </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tên tác giả</span>
-                        <input type="text" class="form-control" name="author_id" >
-                    </div>
+                        <select name="author_id" id="">
+                            <?php foreach($sttm as $article){ ?>
+                                <option value="<?= $article['ma_tgia']?>">
+                                    <?= $article['ten_tgia']?>
+                                </option>
+                           <?php } ?>
+                            
+                        </select> </div>
 
                     <div class="input-group mt-3 mb-3">
                         <span class="input-group-text" id="lblartName">Tóm tắt</span>

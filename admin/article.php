@@ -91,7 +91,7 @@
                                 <a href="edit_article.php?id=<?=$article['ma_bviet']?>"><i class="fa-solid fa-pen-to-square"></i></a>
                             </td>
                             <td>
-                                <a href="process_add_article.php?btn=xoa&id=<?=$article['ma_bviet']?>"><i class="fa-solid fa-trash"></i></a>
+                                <a href="del_article.php?btn=xoa&id=<?=$article['ma_bviet']?>"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php
