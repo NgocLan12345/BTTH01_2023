@@ -1,4 +1,3 @@
-
 <?php
 $name = $_POST['txttentg'];
 $img = $_FILES['hinhanh'];
