@@ -40,7 +40,6 @@
                 </div>
             </div>
         </nav>
-
     </header>
     <main class="container mt-5 mb-5">
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
@@ -52,7 +51,6 @@
                         <span class="input-group-text" id="lblCatName">Tên thể loại</span>
                         <input type="text" class="form-control" name="txtCatName" >
                     </div>
-
                     <div class="form-group  float-end ">
                         <input type="submit" value="Thêm" class="btn btn-success">
                         <a href="category.php" class="btn btn-warning ">Quay lại</a>

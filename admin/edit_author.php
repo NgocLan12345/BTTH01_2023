@@ -28,10 +28,10 @@
                         <a class="nav-link" href="../index.php">Trang ngoài</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold" href="category.php">Thể loại</a>
+                        <a class="nav-link" href="category.php">Thể loại</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="author.php">Tác giả</a>
+                        <a class="nav-link active fw-bold" href="author.php">Tác giả</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="article.php">Bài viết</a>
@@ -46,27 +46,26 @@
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
             <div class="col-sm">
-                <h3 class="text-center text-uppercase fw-bold">Sửa thông tin thể loại</h3>
-                <form action="process_add_category.php" method="post">
-                <?php
-                            $id = $_GET['id'];
-                            require('../includes/connect.php');
-                            $sql = "select * from theloai where ma_tloai = '$id'";
-                            $statement = $conn->query($sql);
-                            $category = $statement ->fetch();
-                            ?>
+                <h3 class="text-center text-uppercase fw-bold">Sửa thông tin tác giả</h3>
+                <form action="process_add_author.php" method="post">
                 <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lblCatId">Mã thể loại</span>
-                        <input type="text" class="form-control" name="txtCatId" readonly value="<?= $category['ma_tloai'] ?>" >
-                    </div>
+                    <span class="input-group-text" id="lblCatName">Mã tác giả</span>
+                    <input type="text" class="form-control" name="txtId" readonly
+                        value="<?= $authors[0]['ma_tgia'] ?? '' ?>">
+                </div>
+
+                <div class="input-group mt-3 mb-3">
+                    <span class="input-group-text" id="lblCatName">Tên tác giả</span>
+                    <input type="text" class="form-control" name="txttentg" value="<?= $authors[0]['ten_tgia'] ?? '' ?>">
+
                     <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lblCatName">Tên thể loại</span>
-                        <input type="text" class="form-control" name="txtCatName" value="<?= $category['ten_tloai'] ?>" >
-                    </div>
+                    <span class="input-group-text" id="img" style="width: 100px">Hình ảnh</span>
+                    <input type="file" class="form-control" name="hinhanh">
+                </div>
 
                     <div class="form-group  float-end ">
-                        <input type="submit" value="Lưu lại" class="btn btn-success">
-                        <a href="category.php" class="btn btn-warning ">Quay lại</a>
+                        <input type="submit" value="Lưu lại" class="btn btn-success" name="btnSave">
+                        <a href="author.php" class="btn btn-warning ">Quay lại</a>
                     </div>
                 </form>
             </div>
